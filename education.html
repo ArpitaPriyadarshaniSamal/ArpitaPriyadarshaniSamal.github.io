@@ -1,4 +1,3 @@
-<!-- education.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +15,48 @@
     }
     th {
       background-color: #e0e0f0;
+    }
+    .images-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      gap: 10px;
+    }
+    .images-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+    .images-col.center {
+      flex: 2;
+      justify-content: center;
+    }
+    .images-col img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+    @media (max-width: 800px) {
+      .images-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .images-col {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      .images-col img {
+        margin: 0 8px;
+      }
     }
   </style>
 </head>
@@ -59,5 +100,24 @@
       <td>2014</td>
     </tr>
   </table>
+
+  <!-- Images row below the table -->
+  <div class="images-row">
+    <!-- Left images -->
+    <div class="images-col left">
+      <img src="gphani.jpg" alt="Left 1">
+      <img src="baurisir.jpg" alt="Left 2">
+    </div>
+    <!-- Center images -->
+    <div class="images-col center">
+      <img src="ravisir.jpg" alt="Center 1">
+      <img src="iitjodhpur.jpeg" alt="Center 2">
+    </div>
+    <!-- Right images -->
+    <div class="images-col right">
+      <img src="burla.jpeg" alt="Right 1">
+      <img src="btech.jpeg" alt="Right 2">
+    </div>
+  </div>
 </body>
 </html>
