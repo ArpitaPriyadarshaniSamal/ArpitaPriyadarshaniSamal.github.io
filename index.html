@@ -43,7 +43,8 @@
         <li>The Effect of Reinforcement Composition and Sintering Temperature on Microstructure and Properties of Al-SiC-Fly Ash Composite, Processing and Characterization of Materials, 2023.</li>
       </ul>
     <a href="#">Educational Background</a>&nbsp;&nbsp;&nbsp; <!-- Adds extra spaces -->
-    <table border="1" cellspacing="0" cellpadding="5" style="margin-top:10px;">
+      <div id="edu-table" style="display:none; margin-top: 15px;">
+  <table border="1" cellspacing="0" cellpadding="5" style="width: 100%; text-align: center;">
         <tr>
           <th>Degree</th>
           <th>Institute</th>
@@ -78,6 +79,16 @@
           <td>9.8</td>
           <td>2014</td>
       </table>
+        </div>
+
+<script>
+  // Toggle the education table when the link is clicked
+  document.getElementById('edu-link').onclick = function(e) {
+    e.preventDefault(); // Prevent page jump
+    var tableDiv = document.getElementById('edu-table');
+    tableDiv.style.display = tableDiv.style.display === 'none' ? 'block' : 'none';
+  };
+</script>
     <a href="#">Experiences</a>&nbsp;&nbsp;&nbsp; <!-- Adds extra spaces -->
     <ul>
         <li>Presented poster in the 30th International Conference on Processing of Advanced Materials and Fabrication of Products (PAMFP-2024), Hyderabad, 11th-13th December, 2024.</li>
