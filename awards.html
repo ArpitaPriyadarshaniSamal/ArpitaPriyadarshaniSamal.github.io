@@ -4,45 +4,97 @@
   <meta charset="utf-8">
   <title>Awards</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
+    .awards-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 40px 0;
+      gap: 30px;
     }
-    h2 {
-      text-align: center;
-      color: #2c3e50;
+    .side-images {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
     }
-    ul {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
+    .side-images img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+    .awards-list-container {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+    .awards-list {
+      list-style: disc;
+      padding: 30px 40px;
       background: #f8f8fc;
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: left;
+      max-width: 700px;
+      margin: 0;
     }
-    li {
+    .awards-list li {
       margin-bottom: 14px;
       line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .awards-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .side-images {
+        flex-direction: row;
+        margin-bottom: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <h2>Awards</h2>
-  <ul>
-    <li>Runner up poster award entitled “An ICME approach to investigate the process-structure-property co-relation of aluminium alloys” at the 30th International Conference on Processing of Advanced Materials and Fabrication of Products (PAMFP-2024), Hyderabad, 11th-13th December, 2024.</li>
-    <li>Best poster entitled “An ICME approach to study the effect of cooling rate on the microstructure evolution of Aluminium alloys” at 28th International Conference on Non-ferrous Metals - 2024 (ICNFM - 2024), 12-13 July, 2024, Bhubaneswar.</li>
-    <li>Winner of OLA’s Sankalp 2024 Thought  Paper Contest.</li>
-    <li>2nd prize in Poster Making Competition held at IIT MADRAS, 2024.</li>
-    <li>Winner of Digital Clash Competition, AIRSS, IIT MADRAS, 2024.</li>
-    <li>1st prize in Prof. Vasudevan Quiz (Meta Quiz Competition), Amalgam 2023, IIT MADRAS.</li>
-    <li>Silver medal for the Best Academic Performance of the class of M.Tech Materials Engg Program, IIT Jodhpur, 2022.</li>
-    <li>1st position in Online Technical Presentation at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.</li>
-    <li>1st position in Online Quiz Contest at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.</li>
-    <li>Special Prize in Doodling the Expression on the Social Fest, IIT Jammu, 2021.</li>
-    <li>2nd position in Poster presentation at IIM, Reminiscence organised by IIEST, Shibpur.</li>
-    <li>2nd position in slogan poster competition on the event of International day of Yoga.</li>
-    <li>1st position in quiz on the event of International day of Yoga.</li>
-    <li>Consolation Prize in the Online Creativity and Innovation Competition, OP Jindal University, Raigarh.</li>
-  </ul>
+  <h2 style="text-align:center;">Awards</h2>
+  <div class="awards-row">
+    <!-- Left Side Images -->
+    <div class="side-images">
+      <img src="INALT.jpg" alt="Left Award 1">
+      <img src="mtechaward.jpg" alt="Left Award 2">
+      <img src="ola.jpg" alt="Left Award 2">
+      <!-- Add more images as needed -->
+    </div>
+
+    <!-- Centered Awards List -->
+    <div class="awards-list-container">
+      <ul class="awards-list">
+        <li>Runner up poster award entitled “An ICME approach to investigate the process-structure-property co-relation of aluminium alloys” at the 30th International Conference on Processing of Advanced Materials and Fabrication of Products (PAMFP-2024), Hyderabad, 11th-13th December, 2024.</li>
+        <li>Best poster entitled “An ICME approach to study the effect of cooling rate on the microstructure evolution of Aluminium alloys” at 28th International Conference on Non-ferrous Metals - 2024 (ICNFM - 2024), 12-13 July, 2024, Bhubaneswar.</li>
+        <li>Winner of OLA’s Sankalp 2024 Thought  Paper Contest.</li>
+        <li>2nd prize in Poster Making Competition held at IIT MADRAS, 2024.</li>
+        <li>Winner of Digital Clash Competition, AIRSS, IIT MADRAS, 2024.</li>
+        <li>1st prize in Prof. Vasudevan Quiz (Meta Quiz Competition), Amalgam 2023, IIT MADRAS.</li>
+        <li>Silver medal for the Best Academic Performance of the class of M.Tech Materials Engg Program, IIT Jodhpur, 2022.</li>
+        <li>1st position in Online Technical Presentation at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.</li>
+        <li>1st position in Online Quiz Contest at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.</li>
+        <li>Special Prize in Doodling the Expression on the Social Fest, IIT Jammu, 2021.</li>
+        <li>2nd position in Poster presentation at IIM, Reminiscence organised by IIEST, Shibpur.</li>
+        <li>2nd position in slogan poster competition on the event of International day of Yoga.</li>
+        <li>1st position in quiz on the event of International day of Yoga.</li>
+        <li>Consolation Prize in the Online Creativity and Innovation Competition, OP Jindal University, Raigarh.</li>
+      </ul>
+    </div>
+
+   <!-- Right Side Images -->
+    <div class="side-images">
+      <img src="iit hyderabad.jpg" alt="Right Award 1">
+      <img src="bhubaneswar_bestposter.jpg" alt="Right Award 2">
+      <!-- Add more images as needed -->
+    </div>
+  </div>
 </body>
 </html>
+
