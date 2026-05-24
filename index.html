@@ -20,7 +20,7 @@
       margin:0;
       padding:0;
       background-color:#F4F6F9;
-      font-family: Georgia, serif;
+      font-family:Georgia, serif;
       color:#222222;
     }
 
@@ -31,7 +31,7 @@
     /* HEADER */
 
     header{
-      background: linear-gradient(135deg, #0A2342, #163A6B);
+      background:linear-gradient(135deg, #0A2342, #163A6B);
       color:white;
       text-align:center;
       padding:70px 20px;
@@ -51,7 +51,7 @@
       color:#D8D8D8;
     }
 
-    /* NAVBAR */
+    /* NAVIGATION */
 
     nav{
       background-color:#081C3A;
@@ -66,7 +66,7 @@
     nav a{
       color:white;
       text-decoration:none;
-      margin:0 22px;
+      margin:0 20px;
       font-size:17px;
       font-family:Arial, sans-serif;
       font-weight:bold;
@@ -76,6 +76,60 @@
     nav a:hover{
       color:#F28C28;
       transform:translateY(-2px);
+    }
+
+    /* DROPDOWN */
+
+    .dropdown{
+      display:inline-block;
+      position:relative;
+    }
+
+    .dropbtn{
+      background:none;
+      border:none;
+      color:white;
+      font-size:17px;
+      font-family:Arial, sans-serif;
+      font-weight:bold;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+
+    .dropbtn:hover{
+      color:#F28C28;
+    }
+
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background-color:white;
+      min-width:240px;
+      box-shadow:0px 8px 16px rgba(0,0,0,0.15);
+      border-radius:8px;
+      overflow:hidden;
+      z-index:1;
+      margin-top:15px;
+      text-align:left;
+    }
+
+    .dropdown-content a{
+      color:#0A2342;
+      padding:14px 18px;
+      text-decoration:none;
+      display:block;
+      font-size:16px;
+      font-weight:normal;
+      margin:0;
+    }
+
+    .dropdown-content a:hover{
+      background-color:#F4F6F9;
+      color:#F28C28;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
     }
 
     /* MAIN CONTAINER */
@@ -89,7 +143,7 @@
       box-shadow:0px 8px 25px rgba(0,0,0,0.08);
     }
 
-    /* SECTION TITLE */
+    /* TITLE */
 
     .about-title{
       font-size:46px;
@@ -181,7 +235,7 @@
       line-height:1.6;
     }
 
-    /* EMAIL / LINK */
+    /* LINKS */
 
     .info-link{
       text-decoration:none;
@@ -215,24 +269,28 @@
     /* GALLERY */
 
     .gallery{
-      margin-top:60px;
+      margin-top:70px;
       display:flex;
       justify-content:center;
-      gap:35px;
+      align-items:center;
+      gap:40px;
       flex-wrap:wrap;
     }
 
     .gallery img{
-      width:320px;
-      height:230px;
-      object-fit:cover;
-      border-radius:12px;
-      box-shadow:0px 5px 14px rgba(0,0,0,0.15);
-      transition:0.3s;
+      width:450px;
+      height:auto;
+      max-height:350px;
+      object-fit:contain;
+      border-radius:14px;
+      background-color:white;
+      padding:10px;
+      box-shadow:0px 6px 18px rgba(0,0,0,0.12);
+      transition:0.4s ease;
     }
 
     .gallery img:hover{
-      transform:scale(1.03);
+      transform:translateY(-5px) scale(1.02);
     }
 
     /* FOOTER */
@@ -274,6 +332,10 @@
         text-align:left;
       }
 
+      .gallery img{
+        width:100%;
+      }
+
     }
 
   </style>
@@ -288,11 +350,11 @@
 
     <h1>Arpita Priyadarshani Samal</h1>
 
-    <p>PHD RESEARCH SCHOLAR | IIT MADRAS</p>
+    <p>Doctoral Research Scholar | IIT MADRAS</p>
 
   </header>
 
-  <!-- NAVIGATION -->
+  <!-- NAVBAR -->
 
   <nav>
 
@@ -304,15 +366,35 @@
 
     <a href="publication.html">PUBLICATIONS</a>
 
-    <a href="teaching.html">TEACHING ASSISTANT</a>
+    <a href="teaching.html">TEACHING</a>
 
-    <a href="experience.html">EXPERIENCE</a>
+    <!-- DROPDOWN EXPERIENCE -->
+
+    <div class="dropdown">
+
+      <button class="dropbtn">
+        EXPERIENCE ▼
+      </button>
+
+      <div class="dropdown-content">
+
+        <a href="academicexperience.html">
+          Academic Experience
+        </a>
+
+        <a href="industrialexperience.html">
+          Industrial Experience
+        </a>
+
+      </div>
+
+    </div>
 
     <a href="awards.html">AWARDS</a>
 
   </nav>
 
-  <!-- MAIN SECTION -->
+  <!-- MAIN CONTENT -->
 
   <div class="container">
 
@@ -334,7 +416,9 @@
 
         <h2>Arpita Priyadarshani Samal</h2>
 
-        <p class="designation">PhD Research Scholar</p>
+        <p class="designation">
+          PhD Research Scholar
+        </p>
 
         <div class="divider"></div>
 
@@ -355,8 +439,11 @@
             </div>
 
             <div class="info-small">
-              Room 220, ICME Lab, Krishna Chivukla Block (KCB),
+
+              Room 220, ICME Lab,
+              Krishna Chivukla Block (KCB),
               Chennai 600036, India
+
             </div>
 
           </div>
@@ -373,7 +460,9 @@
 
             <a href="mailto:mm22d004@smail.iitm.ac.in"
                class="info-link">
+
                mm22d004@smail.iitm.ac.in
+
             </a>
 
           </div>
@@ -406,9 +495,12 @@
 
           <p>
 
-            Research Scholar in Metallurgical and Materials Engineering
-            with interests in advanced materials research and
-            computational materials engineering.
+           <br> I have always been keen for practical experiences. In my industrial training journey at SAIL, Rourkela and Aditya Aluminium & Power Plant, Lapanga I could explore and gain experience on practical challenges at industry. </br>
+
+<br> During my Masters @IIT Jodhpur my project was based on thermodynamics calculation using Thermo-Calc software (CALPHAD approach) which was applied for Casting and Microstructure evolution prediction. </br>
+
+
+Further for my PhD in Metallurgical and Materials Engineering @IIT Madras, I delved to expand my research interest in Phase Field Modelling and Microstructure development via ICME Approach for Casting & Solidification process of Aluminium alloys.
 
           </p>
 
