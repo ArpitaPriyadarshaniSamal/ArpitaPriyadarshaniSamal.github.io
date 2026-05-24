@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Arpita Priyadarshani Samal | Homepage</title>
@@ -12,150 +14,266 @@
 
   <style>
 
+    /* GENERAL */
+
     body{
       margin:0;
       padding:0;
-      background-color:#F5F5F5;
+      background-color:#F4F6F9;
       font-family: Georgia, serif;
+      color:#222222;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     /* HEADER */
 
     header{
-      background-color:#0A2342;
-      text-align:center;
-      padding:50px 20px;
+      background: linear-gradient(135deg, #0A2342, #163A6B);
       color:white;
+      text-align:center;
+      padding:70px 20px;
     }
 
     header h1{
       margin:0;
-      font-size:60px;
+      font-size:62px;
       letter-spacing:1px;
+      font-weight:bold;
     }
 
     header p{
       margin-top:15px;
       font-size:22px;
-      letter-spacing:2px;
-      color:#D6D6D6;
+      letter-spacing:3px;
+      color:#D8D8D8;
     }
 
-    /* NAVIGATION */
+    /* NAVBAR */
 
     nav{
-      background-color:#001B44;
+      background-color:#081C3A;
       padding:18px 0;
       border-bottom:4px solid #F28C28;
       text-align:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
 
     nav a{
       color:white;
       text-decoration:none;
-      margin:0 20px;
-      font-size:18px;
+      margin:0 22px;
+      font-size:17px;
       font-family:Arial, sans-serif;
       font-weight:bold;
-      transition:0.3s;
+      transition:all 0.3s ease;
     }
 
     nav a:hover{
       color:#F28C28;
+      transform:translateY(-2px);
     }
 
-    /* MAIN CONTENT */
+    /* MAIN CONTAINER */
 
     .container{
-      width:75%;
-      margin:40px auto;
+      width:78%;
+      margin:50px auto;
       background-color:white;
-      padding:50px;
-      border-radius:10px;
-      box-shadow:0px 0px 12px rgba(0,0,0,0.1);
+      padding:60px;
+      border-radius:12px;
+      box-shadow:0px 8px 25px rgba(0,0,0,0.08);
     }
 
+    /* SECTION TITLE */
+
     .about-title{
-      font-size:42px;
+      font-size:46px;
       color:#0A2342;
-      border-bottom:3px solid #F28C28;
+      border-bottom:4px solid #F28C28;
       display:inline-block;
       padding-bottom:10px;
-      margin-bottom:40px;
+      margin-bottom:50px;
     }
+
+    /* PROFILE SECTION */
 
     .profile-section{
       display:flex;
+      gap:60px;
       align-items:flex-start;
-      gap:50px;
       flex-wrap:wrap;
     }
 
-    .profile-section img{
-      width:260px;
-      height:320px;
+    /* PROFILE IMAGE */
+
+    .profile-image img{
+      width:280px;
+      height:340px;
       object-fit:cover;
-      border-radius:10px;
-      box-shadow:0px 4px 10px rgba(0,0,0,0.2);
+      border-radius:14px;
+      box-shadow:0px 6px 18px rgba(0,0,0,0.18);
     }
+
+    /* PROFILE DETAILS */
 
     .profile-text{
       flex:1;
-      min-width:300px;
+      min-width:320px;
     }
 
-    .profile-text p{
-      font-size:22px;
-      line-height:1.8;
-      color:#222222;
+    .profile-text h2{
+      font-size:40px;
+      color:#0A2342;
+      margin-bottom:10px;
     }
 
-    /* CONTACT ICONS */
+    .designation{
+      font-size:24px;
+      color:#F28C28;
+      font-weight:bold;
+      margin-top:0;
+      margin-bottom:25px;
+    }
 
-    .contact-icons{
+    .divider{
+      width:100%;
+      height:2px;
+      background-color:#E5E5E5;
+      margin-bottom:30px;
+    }
+
+    /* INFO BLOCKS */
+
+    .info-block{
       display:flex;
-      align-items:center;
-      gap:20px;
-      margin-top:20px;
+      align-items:flex-start;
+      gap:18px;
+      margin-bottom:28px;
     }
 
-    .contact-icons img{
-      width:50px;
-      height:50px;
+    .icon{
+      font-size:32px;
+      color:#F28C28;
+      min-width:40px;
+    }
+
+    .info-title{
+      font-size:26px;
+      font-weight:bold;
+      color:#0A2342;
+    }
+
+    .info-subtitle{
+      font-size:23px;
+      color:#333333;
+      margin-top:5px;
+    }
+
+    .info-small{
+      font-size:20px;
+      color:#666666;
+      margin-top:5px;
+      line-height:1.6;
+    }
+
+    /* EMAIL / LINK */
+
+    .info-link{
+      text-decoration:none;
+      color:#0A2342;
+      font-size:22px;
       transition:0.3s;
     }
 
-    .contact-icons img:hover{
-      transform:scale(1.1);
+    .info-link:hover{
+      color:#F28C28;
     }
 
-    /* RESEARCH IMAGES */
+    /* ABOUT BOX */
+
+    .about-box{
+      background-color:#F9FAFC;
+      border-left:5px solid #F28C28;
+      padding:28px;
+      border-radius:10px;
+      margin-top:35px;
+    }
+
+    .about-box p{
+      margin:0;
+      font-size:21px;
+      line-height:1.9;
+      color:#333333;
+      font-style:italic;
+    }
+
+    /* GALLERY */
 
     .gallery{
-      margin-top:50px;
+      margin-top:60px;
       display:flex;
       justify-content:center;
-      gap:30px;
+      gap:35px;
       flex-wrap:wrap;
     }
 
     .gallery img{
-      width:300px;
-      height:220px;
+      width:320px;
+      height:230px;
       object-fit:cover;
-      border-radius:10px;
-      box-shadow:0px 4px 10px rgba(0,0,0,0.15);
+      border-radius:12px;
+      box-shadow:0px 5px 14px rgba(0,0,0,0.15);
+      transition:0.3s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
     }
 
     /* FOOTER */
 
     footer{
-      text-align:center;
-      padding:30px;
-      background-color:#0A2342;
+      margin-top:60px;
+      background-color:#081C3A;
       color:white;
-      margin-top:50px;
+      text-align:center;
+      padding:28px;
       font-size:16px;
+      letter-spacing:1px;
+    }
+
+    /* RESPONSIVE */
+
+    @media screen and (max-width:900px){
+
+      header h1{
+        font-size:42px;
+      }
+
+      nav a{
+        display:inline-block;
+        margin:10px;
+      }
+
+      .container{
+        width:90%;
+        padding:30px;
+      }
+
+      .profile-section{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .profile-text{
+        text-align:left;
+      }
+
     }
 
   </style>
@@ -170,7 +288,7 @@
 
     <h1>Arpita Priyadarshani Samal</h1>
 
-    <p>Doctoral Research Scholar | IIT MADRAS</p>
+    <p>PHD RESEARCH SCHOLAR | IIT MADRAS</p>
 
   </header>
 
@@ -194,7 +312,7 @@
 
   </nav>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN SECTION -->
 
   <div class="container">
 
@@ -204,45 +322,95 @@
 
       <!-- PROFILE IMAGE -->
 
-      <img src="ARPITA.jpg" alt="Arpita Priyadarshani Samal">
+      <div class="profile-image">
+
+        <img src="ARPITA.jpg" alt="Arpita Priyadarshani Samal">
+
+      </div>
 
       <!-- PROFILE DETAILS -->
 
       <div class="profile-text">
 
-        <p>
+        <h2>Arpita Priyadarshani Samal</h2>
 
-          Arpita Priyadarshani Samal
-          <br>
+        <p class="designation">PhD Research Scholar</p>
 
-          PhD Research Scholar
-          <br>
+        <div class="divider"></div>
 
-          Dept. of Metallurgical and Materials Engineering
-          <br>
+        <!-- LOCATION -->
 
-          Indian Institute of Technology Madras, Chennai 600 036, India
-          <br>
+        <div class="info-block">
 
-          Office: Room 220, ICME Lab, Krishna Chivukla Block (KCB)
+          <div class="icon">📍</div>
 
-        </p>
+          <div>
 
-        <!-- CONTACT ICONS -->
+            <div class="info-title">
+              Dept. of Metallurgical and Materials Engineering
+            </div>
 
-        <div class="contact-icons">
+            <div class="info-subtitle">
+              Indian Institute of Technology Madras
+            </div>
 
-          <a href="mailto:mm22d004@smail.iitm.ac.in">
+            <div class="info-small">
+              Room 220, ICME Lab, Krishna Chivukla Block (KCB),
+              Chennai 600036, India
+            </div>
 
-            <img src="gmail-icon.png" alt="Email">
+          </div>
 
-          </a>
+        </div>
 
-          <a href="https://www.linkedin.com/in/arpita-priyadarshani-samal-0a75a9153/" target="_blank">
+        <!-- EMAIL -->
 
-            <img src="linkedin-icon.png" alt="LinkedIn">
+        <div class="info-block">
 
-          </a>
+          <div class="icon">✉</div>
+
+          <div>
+
+            <a href="mailto:mm22d004@smail.iitm.ac.in"
+               class="info-link">
+               mm22d004@smail.iitm.ac.in
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- LINKEDIN -->
+
+        <div class="info-block">
+
+          <div class="icon">🔗</div>
+
+          <div>
+
+            <a href="https://www.linkedin.com/in/arpita-priyadarshani-samal-0a75a9153/"
+               target="_blank"
+               class="info-link">
+
+               LinkedIn Profile
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- ABOUT BOX -->
+
+        <div class="about-box">
+
+          <p>
+
+            Research Scholar in Metallurgical and Materials Engineering
+            with interests in advanced materials research and
+            computational materials engineering.
+
+          </p>
 
         </div>
 
@@ -250,7 +418,7 @@
 
     </div>
 
-    <!-- RESEARCH / LAB IMAGES -->
+    <!-- RESEARCH IMAGES -->
 
     <div class="gallery">
 
