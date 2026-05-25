@@ -1,103 +1,405 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Awards</title>
+
   <style>
-    .awards-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      margin: 40px 0;
-      gap: 30px;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
-    .side-images {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      align-items: center;
+
+    body{
+      font-family:"Times New Roman", serif;
+      background:#f5f5f5;
+      padding:30px;
     }
-    .side-images img {
-      width: 300px;    /* Increased size */
-      height: 300px;   /* Increased size */
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-      background: #fff;
-      border: 1px solid #ccc;
+
+    h2{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:35px;
+      color:#111;
     }
-    .awards-list-container {
-      display: flex;
-      justify-content: center;
-      flex: 1;
+
+    /* ================= MAIN LAYOUT ================= */
+
+    .awards-row{
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:45px;
     }
-    .awards-list {
-      list-style: disc;
-      padding: 30px 40px;
-      background: #f8f8fc;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      text-align: left;
-      max-width: 700px;
-      margin: 0;
+
+    /* ================= IMAGE COLUMNS ================= */
+
+    .side-images{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+      align-items:center;
     }
-    .awards-list li {
-      margin-bottom: 14px;
-      line-height: 1.6;
+
+    /* ================= IMAGE CARD ================= */
+
+    .card{
+      position:relative;
+
+      width:320px;
+      height:320px;
+
+      overflow:hidden;
+      border-radius:18px;
+
+      cursor:pointer;
+
+      background:#fff;
+
+      box-shadow:0 8px 22px rgba(0,0,0,0.18);
+
+      transition:0.5s ease;
     }
-    @media (max-width: 900px) {
-      .awards-row {
-        flex-direction: column;
-        align-items: center;
+
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+
+      transition:0.5s ease;
+    }
+
+    /* ================= HOVER EFFECT ================= */
+
+    .card:hover{
+      transform:scale(1.18);
+      z-index:100;
+      box-shadow:0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .card:hover img{
+      transform:scale(1.12);
+      filter:brightness(35%);
+    }
+
+    /* ================= OVERLAY ================= */
+
+    .overlay{
+      position:absolute;
+      inset:0;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+
+      padding:20px;
+
+      color:white;
+
+      background:rgba(0,0,0,0.35);
+
+      opacity:0;
+
+      transition:0.5s ease;
+    }
+
+    .card:hover .overlay{
+      opacity:1;
+    }
+
+    .overlay h3{
+      font-size:28px;
+      margin-bottom:12px;
+
+      transform:translateY(20px);
+      transition:0.4s ease;
+    }
+
+    .overlay p{
+      font-size:18px;
+      line-height:1.6;
+
+      transform:translateY(20px);
+      transition:0.4s ease;
+    }
+
+    .card:hover .overlay h3,
+    .card:hover .overlay p{
+      transform:translateY(0);
+    }
+
+    /* ================= AWARDS LIST ================= */
+
+    .awards-list-container{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .awards-list{
+      list-style:disc;
+
+      max-width:780px;
+
+      background:#f8f8fc;
+
+      padding:35px 45px;
+
+      border-radius:16px;
+
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .awards-list li{
+      margin-bottom:16px;
+      line-height:1.7;
+      font-size:19px;
+      color:#111;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1100px){
+
+      .awards-row{
+        flex-direction:column;
+        align-items:center;
       }
-      .side-images {
-        flex-direction: row;
-        margin-bottom: 20px;
+
+      .side-images{
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
       }
+
+      .card{
+        width:280px;
+        height:280px;
+      }
+
+      .card:hover{
+        transform:scale(1.05);
+      }
+
+      .awards-list{
+        width:95%;
+      }
+
+      .awards-list li{
+        font-size:17px;
+      }
+
     }
+
   </style>
+
 </head>
+
 <body>
-  <h2 style="text-align:center;">Awards</h2>
+
+  <h2>Awards</h2>
+
   <div class="awards-row">
-    <!-- Left Side Images -->
+
+    <!-- ================= LEFT IMAGES ================= -->
+
     <div class="side-images">
-      <img src="INALT.jpeg" alt="Left Award 1">
-      <img src="airss.jpeg" alt="Left Award 2">
-      <img src="ola.jpeg" alt="Left Award 3">
-      <img src="amalgam.jpg" alt="Left Award 4">
-      <!-- Add more images as needed -->
+
+      <div class="card">
+
+        <img src="INALT.jpeg" alt="INALT Award">
+
+        <div class="overlay">
+          <h3>INALT 2020</h3>
+
+          <p>
+            Recognition and presentation award received at INALT conference.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="airss.jpeg" alt="AIRSS Award">
+
+        <div class="overlay">
+          <h3>AIRSS IIT Madras</h3>
+
+          <p>
+            Winner of Digital Clash Competition at IIT Madras.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="ola.jpeg" alt="OLA Award">
+
+        <div class="overlay">
+          <h3>OLA Sankalp</h3>
+
+          <p>
+            Winner of Sankalp 2024 Thought Paper Contest.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="amalgam.jpg" alt="Amalgam Quiz">
+
+        <div class="overlay">
+          <h3>Amalgam 2023</h3>
+
+          <p>
+            First prize in Prof. Vasudevan Meta Quiz Competition.
+          </p>
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- Centered Awards List -->
+    <!-- ================= AWARDS LIST ================= -->
+
     <div class="awards-list-container">
+
       <ul class="awards-list">
-        <li><strong>2nd prize award</strong> entitled “An ICME approach to investigate the process-structure-property co-relation of aluminium alloys” at the 30th International Conference on Processing of Advanced Materials and Fabrication of Products (PAMFP-2024), Hyderabad, 11th-13th December, 2024.</li>
-        <li><strong>Best poster</strong> entitled “An ICME approach to study the effect of cooling rate on the microstructure evolution of Aluminium alloys” at 28th International Conference on Non-ferrous Metals - 2024 (ICNFM - 2024), 12-13 July, 2024, Bhubaneswar.</li>
-        <li><strong>Winner</strong> of OLA’s Sankalp 2024 Thought  Paper Contest.</li>
-        <li><strong>2nd prize</strong> in Poster Making Competition held at IIT MADRAS, 2024.</li>
-        <li><strong>Winner</strong> of Digital Clash Competition, AIRSS, IIT MADRAS, 2024.</li>
-        <li><strong>1st prize</strong> in Prof. Vasudevan Quiz (Meta Quiz Competition), Amalgam 2023, IIT MADRAS.</li>
-        <li><strong>Silver medal for the Best Academic Performance</strong> of the class of M.Tech Materials Engg Program, IIT Jodhpur, 2022.</li>
-        <li><strong>1st position</strong> in Online Technical Presentation at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.</li>
-        <li><strong>1st position</strong> in Online Quiz Contest at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.</li>
-        <li>Special Prize in Doodling the Expression on the Social Fest, IIT Jammu, 2021.</li>
-        <li><strong>2nd position</strong> in Poster presentation at IIM, Reminiscence organised by IIEST, Shibpur.</li>
-        <li><strong>2nd position</strong> in slogan poster competition on the event of International day of Yoga.</li>
-        <li><strong>1st position</strong> in quiz on the event of International day of Yoga.</li>
-        <li>Consolation Prize in the Online Creativity and Innovation Competition, OP Jindal University, Raigarh.</li>
+
+        <li>
+          <strong>2nd prize award</strong> entitled “An ICME approach to investigate the process-structure-property co-relation of aluminium alloys” at the 30th International Conference on Processing of Advanced Materials and Fabrication of Products (PAMFP-2024), Hyderabad, 11th-13th December, 2024.
+        </li>
+
+        <li>
+          <strong>Best poster</strong> entitled “An ICME approach to study the effect of cooling rate on the microstructure evolution of Aluminium alloys” at 28th International Conference on Non-ferrous Metals - 2024 (ICNFM - 2024), 12-13 July, 2024, Bhubaneswar.
+        </li>
+
+        <li>
+          <strong>Winner</strong> of OLA’s Sankalp 2024 Thought Paper Contest.
+        </li>
+
+        <li>
+          <strong>2nd prize</strong> in Poster Making Competition held at IIT MADRAS, 2024.
+        </li>
+
+        <li>
+          <strong>Winner</strong> of Digital Clash Competition, AIRSS, IIT MADRAS, 2024.
+        </li>
+
+        <li>
+          <strong>1st prize</strong> in Prof. Vasudevan Quiz (Meta Quiz Competition), Amalgam 2023, IIT MADRAS.
+        </li>
+
+        <li>
+          <strong>Silver medal for the Best Academic Performance</strong> of the class of M.Tech Materials Engg Program, IIT Jodhpur, 2022.
+        </li>
+
+        <li>
+          <strong>1st position</strong> in Online Technical Presentation at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.
+        </li>
+
+        <li>
+          <strong>1st position</strong> in Online Quiz Contest at Diamond Jubilee Year Celebration, NIT Rourkela, 2021.
+        </li>
+
+        <li>
+          Special Prize in Doodling the Expression on the Social Fest, IIT Jammu, 2021.
+        </li>
+
+        <li>
+          <strong>2nd position</strong> in Poster presentation at IIM, Reminiscence organised by IIEST, Shibpur.
+        </li>
+
+        <li>
+          <strong>2nd position</strong> in slogan poster competition on the event of International day of Yoga.
+        </li>
+
+        <li>
+          <strong>1st position</strong> in quiz on the event of International day of Yoga.
+        </li>
+
+        <li>
+          Consolation Prize in the Online Creativity and Innovation Competition, OP Jindal University, Raigarh.
+        </li>
+
       </ul>
+
     </div>
 
-   <!-- Right Side Images -->
+    <!-- ================= RIGHT IMAGES ================= -->
+
     <div class="side-images">
-      <img src="iit hyderabad.jpeg" alt="Right Award 1">
-      <img src="mtechaward.jpeg" alt="Right Award 2">
-      <img src="bhubaneswar_best poster.jpeg" alt="Right Award 3">
-      <img src="poster_dean.jpg" alt="Right Award 4">
-      <!-- Add more images as needed -->
-    </div>
-  </div>
-</body>
-</html>
 
+      <div class="card">
+
+        <img src="iit hyderabad.jpeg" alt="PAMFP Award">
+
+        <div class="overlay">
+          <h3>PAMFP 2024</h3>
+
+          <p>
+            Second prize award at PAMFP 2024 conference, Hyderabad.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="mtechaward.jpeg" alt="Silver Medal">
+
+        <div class="overlay">
+          <h3>Silver Medal</h3>
+
+          <p>
+            Best Academic Performance award during M.Tech at IIT Jodhpur.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="bhubaneswar_best poster.jpeg" alt="Best Poster">
+
+        <div class="overlay">
+          <h3>Best Poster Award</h3>
+
+          <p>
+            Best poster presentation at ICNFM 2024, Bhubaneswar.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="poster_dean.jpg" alt="Poster Competition">
+
+        <div class="overlay">
+          <h3>Poster Competition</h3>
+
+          <p>
+            Prize-winning poster presentation and academic recognition.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
