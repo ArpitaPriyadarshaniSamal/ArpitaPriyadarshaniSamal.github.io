@@ -1,67 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Educational Background</title>
+
   <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
-    th, td {
-      border: 1px solid #888;
-      padding: 8px;
+
+    body{
+      font-family: "Times New Roman", serif;
+      background:#f5f5f5;
+      padding:30px;
     }
-    th {
-      background-color: #e0e0f0;
+
+    h2{
+      margin-bottom:20px;
+      font-size:38px;
+      color:#111;
+      text-align:center;
     }
-    .images-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      gap: 10px;
+
+    /* ================= TABLE ================= */
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      text-align:center;
+      background:white;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      overflow:hidden;
+      border-radius:12px;
     }
-    .images-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      flex: 1;
+
+    th, td{
+      border:1px solid #b5b5b5;
+      padding:14px;
+      font-size:20px;
     }
-    .images-col.center {
-      flex: 2;
-      justify-content: center;
+
+    th{
+      background:#d9d9ec;
+      font-size:22px;
     }
-    .images-col img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-      background: #fff;
-      border: 1px solid #ccc;
+
+    tr:hover{
+      background:#f2f2ff;
+      transition:0.3s;
     }
-    @media (max-width: 800px) {
-      .images-row {
-        flex-direction: column;
-        align-items: center;
+
+    /* ================= IMAGE GALLERY ================= */
+
+    .gallery{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+      justify-items:center;
+    }
+
+    .card{
+      position:relative;
+      width:320px;
+      height:320px;
+      border-radius:20px;
+      overflow:hidden;
+      cursor:pointer;
+      box-shadow:0 8px 25px rgba(0,0,0,0.15);
+      transition:transform 0.4s ease;
+      background:#fff;
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.03);
+    }
+
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.5s ease;
+    }
+
+    .card:hover img{
+      transform:scale(1.12);
+      filter:brightness(45%);
+    }
+
+    /* Hover Content */
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      text-align:center;
+      color:white;
+      background:rgba(0,0,0,0.45);
+      opacity:0;
+      transition:0.5s ease;
+    }
+
+    .card:hover .overlay{
+      opacity:1;
+    }
+
+    .overlay h3{
+      font-size:30px;
+      margin-bottom:12px;
+      transform:translateY(20px);
+      transition:0.4s;
+    }
+
+    .overlay p{
+      font-size:18px;
+      line-height:1.6;
+      transform:translateY(20px);
+      transition:0.4s;
+    }
+
+    .card:hover .overlay h3,
+    .card:hover .overlay p{
+      transform:translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      body{
+        padding:15px;
       }
-      .images-col {
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 15px;
+
+      h2{
+        font-size:30px;
       }
-      .images-col img {
-        margin: 0 8px;
+
+      th, td{
+        font-size:16px;
+        padding:10px;
       }
+
+      .card{
+        width:95%;
+        height:280px;
+      }
+
+      .overlay h3{
+        font-size:24px;
+      }
+
+      .overlay p{
+        font-size:16px;
+      }
+
     }
+
   </style>
 </head>
+
 <body>
+
   <h2>Educational Background</h2>
+
   <table>
     <tr>
       <th>Degree</th>
@@ -69,30 +178,35 @@
       <th>CGPA</th>
       <th>Years</th>
     </tr>
+
     <tr>
       <td>PhD in Metallurgical and Materials Engineering</td>
       <td>Indian Institute of Technology Madras</td>
       <td>9.5</td>
       <td>2022-ongoing</td>
     </tr>
+
     <tr>
-      <td>M.Tech in Metallurgical and Materials Engineering </td>
+      <td>M.Tech in Metallurgical and Materials Engineering</td>
       <td>Indian Institute of Technology Jodhpur</td>
       <td>9.15</td>
       <td>2020-22</td>
     </tr>
+
     <tr>
-      <td>B. Tech in Metallurgical and Materials Engineering </td>
+      <td>B. Tech in Metallurgical and Materials Engineering</td>
       <td>Veer Surendra Sai University of Technology, Burla</td>
       <td>9.18</td>
       <td>2016-20</td>
     </tr>
+
     <tr>
       <td>Higher Secondary</td>
       <td>Deepika E.M. School, Rourkela</td>
       <td>86.67%</td>
       <td>2014-16</td>
     </tr>
+
     <tr>
       <td>Secondary</td>
       <td>Deepika E.M. School, Rourkela</td>
@@ -101,23 +215,77 @@
     </tr>
   </table>
 
-  <!-- Images row below the table -->
-  <div class="images-row">
-    <!-- Left images -->
-    <div class="images-col left">
-      <img src="gphani.jpg" alt="Left 1">
-      <img src="baurisir.jpg" alt="Left 2">
+  <!-- ================= IMAGE HOVER GALLERY ================= -->
+
+  <div class="gallery">
+
+    <!-- IMAGE 1 -->
+    <div class="card">
+      <img src="gphani.jpg" alt="Professor G.Phani">
+      <div class="overlay">
+        <h3>Research Group</h3>
+        <p>
+          Research discussions and academic collaboration during PhD at IIT Madras.
+        </p>
+      </div>
     </div>
-    <!-- Center images -->
-    <div class="images-col center">
-      <img src="ravisir.jpg" alt="Center 1">
-      <img src="iitjodhpur.jpeg" alt="Center 2">
+
+    <!-- IMAGE 2 -->
+    <div class="card">
+      <img src="baurisir.jpg" alt="Research Lab">
+      <div class="overlay">
+        <h3>Laboratory Team</h3>
+        <p>
+          Research interaction and laboratory activities with team members and mentors.
+        </p>
+      </div>
     </div>
-    <!-- Right images -->
-    <div class="images-col right">
-      <img src="burla.jpeg" alt="Right 1">
-      <img src="btech.jpeg" alt="Right 2">
+
+    <!-- IMAGE 3 -->
+    <div class="card">
+      <img src="ravisir.jpg" alt="Research Meeting">
+      <div class="overlay">
+        <h3>Academic Gathering</h3>
+        <p>
+          Academic engagement and collaborative research environment at IIT Madras.
+        </p>
+      </div>
     </div>
+
+    <!-- IMAGE 4 -->
+    <div class="card">
+      <img src="iitjodhpur.jpeg" alt="IIT Jodhpur">
+      <div class="overlay">
+        <h3>IIT Jodhpur</h3>
+        <p>
+          M.Tech journey in Metallurgical and Materials Engineering at IIT Jodhpur.
+        </p>
+      </div>
+    </div>
+
+    <!-- IMAGE 5 -->
+    <div class="card">
+      <img src="burla.jpeg" alt="VSSUT Burla">
+      <div class="overlay">
+        <h3>VSSUT Burla</h3>
+        <p>
+          Undergraduate experience and technical development during B.Tech studies.
+        </p>
+      </div>
+    </div>
+
+    <!-- IMAGE 6 -->
+    <div class="card">
+      <img src="btech.jpeg" alt="B.Tech Group">
+      <div class="overlay">
+        <h3>Student Community</h3>
+        <p>
+          Memorable moments with peers, faculty members, and academic colleagues.
+        </p>
+      </div>
+    </div>
+
   </div>
+
 </body>
 </html>
